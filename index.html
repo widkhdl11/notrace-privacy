@@ -35,8 +35,9 @@
 <p>본 확장 프로그램은 사용자의 방문 기록, 열람 내용, 검색어를 <strong>외부 서버로 전송하거나 저장하지 않습니다.</strong> 개발자는 사용자가 어떤 사이트를 등록했는지, 어떤 사이트를 방문하는지 알 수 없습니다. 모든 처리는 사용자의 브라우저 안에서만 이루어집니다.</p>
 
 <h2>2. 저장하는 정보와 저장 위치</h2>
-<p>본 확장 프로그램은 사용자가 등록한 사이트·게시판 목록(도메인 및 URL 패턴)과 켜기/끄기 설정만을 저장합니다. 이 정보는 크롬의 <code>storage.sync</code> 영역에 저장되며, 이는 사용자 본인의 구글 계정에 연결되어 같은 계정의 다른 기기와 동기화됩니다. 이 저장소는 개발자가 접근할 수 없으며, 구글이 사용자 계정 단위로 관리합니다.</p>
+<p>본 확장 프로그램은 사용자가 등록한 사이트·게시판 목록(도메인 및 URL 패턴), 켜기/끄기 설정, 그리고 리뷰 안내를 다시 표시하지 않기로 한 선택을 저장합니다. 이 정보는 크롬의 <code>storage.sync</code> 영역에 저장되며, 이는 사용자 본인의 구글 계정에 연결되어 같은 계정의 다른 기기와 동기화됩니다. 이 저장소는 개발자가 접근할 수 없으며, 구글이 사용자 계정 단위로 관리합니다.</p>
 <p>이 외에, 리뷰 요청을 표시할 시점을 판단하기 위한 누적 삭제 건수와 설치 시각이 사용자의 기기 내부(<code>storage.local</code>)에만 저장됩니다. 이 값은 어떤 URL도 포함하지 않는 숫자이며, 기기 밖으로 전송되지 않습니다.</p>
+<p>또한 과거 기록을 소급 삭제하는 동안 진행률을 팝업에 표시하기 위해, 삭제 중인 도메인 이름과 진행 건수가 <code>storage.session</code> 영역에 임시로 저장됩니다. 이 값은 삭제가 끝나면 지워지고, 브라우저를 종료하면 함께 사라지며, 기기 밖으로 전송되지 않습니다.</p>
 
 <h2>3. 권한을 사용하는 이유</h2>
 <ul>
@@ -48,10 +49,11 @@
 </ul>
 
 <h2>4. 결제 처리</h2>
-<p>본 확장 프로그램의 유료 기능 결제는 제3자 서비스인 ExtensionPay(extensionpay.com)를 통해 처리됩니다. 결제 진행 시 결제 상태 확인을 위한 통신이 ExtensionPay와 이루어집니다. 실제 카드 정보 등 결제 수단 정보는 본 확장 프로그램이 아니라 ExtensionPay 및 그 결제 처리사(Stripe)가 처리하며, 개발자는 이에 접근하지 않습니다. ExtensionPay의 개인정보 처리방침은 해당 서비스의 웹사이트를 참고하시기 바랍니다.</p>
+<p>현재 배포 중인 무료 버전은 결제 기능을 포함하지 않으며, 결제와 관련해 외부와 통신하지 않습니다.</p>
+<p>향후 유료 기능이 제공되는 경우, 결제는 제3자 서비스인 ExtensionPay(extensionpay.com)를 통해 처리되며, 결제 진행 시 결제 상태 확인을 위한 통신이 ExtensionPay와 이루어집니다. 그 경우에도 실제 카드 정보 등 결제 수단 정보는 본 확장 프로그램이 아니라 ExtensionPay 및 그 결제 처리사(Stripe)가 처리하며, 개발자는 이에 접근하지 않습니다. ExtensionPay의 개인정보 처리방침은 해당 서비스의 웹사이트를 참고하시기 바랍니다.</p>
 
 <h2>5. 정보의 제3자 제공</h2>
-<p>본 확장 프로그램은 4항의 결제 처리를 제외하고 사용자의 어떠한 정보도 제3자에게 판매·제공·공유하지 않습니다.</p>
+<p>본 확장 프로그램은 4항에 적힌 결제 처리(제공되는 경우에 한함)를 제외하고, 사용자의 어떠한 정보도 제3자에게 판매·제공·공유하지 않습니다.</p>
 
 <h2>6. 문의</h2>
 <p>본 방침에 대한 문의는 다음 이메일로 연락 주시기 바랍니다: <code>wjdrudgml17@gmail.com</code></p>
@@ -70,8 +72,9 @@
 <p>The Extension <strong>does not transmit or store</strong> your browsing history, page contents, or search queries on any external server. The developer cannot know which sites you register or which sites you visit. All processing happens entirely within your own browser.</p>
 
 <h2>2. Information we store and where</h2>
-<p>The Extension stores only your list of registered sites and boards (domains and URL patterns) and your on/off setting. This is kept in Chrome's <code>storage.sync</code> area, which is tied to your own Google account and syncs across your devices signed in to that account. The developer cannot access this storage; it is managed by Google on a per-account basis.</p>
+<p>The Extension stores your list of registered sites and boards (domains and URL patterns), your on/off setting, and your choice to stop showing the review prompt. This is kept in Chrome's <code>storage.sync</code> area, which is tied to your own Google account and syncs across your devices signed in to that account. The developer cannot access this storage; it is managed by Google on a per-account basis.</p>
 <p>Additionally, a cumulative deletion count and the installation time are stored only on your device (<code>storage.local</code>) to decide when to show a review request. These are plain numbers containing no URLs, and never leave your device.</p>
+<p>While past history is being deleted retroactively, the name of the domain being processed and the progress counts are held temporarily in the <code>storage.session</code> area so the popup can show progress. This is cleared when the deletion finishes, disappears when you close the browser, and never leaves your device.</p>
 
 <h2>3. Why we use each permission</h2>
 <ul>
@@ -83,10 +86,11 @@
 </ul>
 
 <h2>4. Payment processing</h2>
-<p>Payment for the Extension's paid features is handled by a third-party service, ExtensionPay (extensionpay.com). During payment, communication with ExtensionPay occurs to verify payment status. Actual payment method details (such as card numbers) are handled by ExtensionPay and its payment processor (Stripe), not by the Extension, and the developer does not access them. Please refer to ExtensionPay's own privacy policy on their website.</p>
+<p>The free version currently distributed includes no payment feature and performs no external communication related to payment.</p>
+<p>If paid features are offered in the future, payment will be handled by a third-party service, ExtensionPay (extensionpay.com), and communication with ExtensionPay will occur to verify payment status. Even then, actual payment method details (such as card numbers) are handled by ExtensionPay and its payment processor (Stripe), not by the Extension, and the developer does not access them. Please refer to ExtensionPay's own privacy policy on their website.</p>
 
 <h2>5. Sharing with third parties</h2>
-<p>Except for the payment processing described in section 4, the Extension does not sell, provide, or share any of your information with third parties.</p>
+<p>Except for the payment processing described in section 4 (where offered), the Extension does not sell, provide, or share any of your information with third parties.</p>
 
 <h2>6. Contact</h2>
 <p>For questions about this policy, please contact: <code>wjdrudgml17@gmail.com</code></p>
@@ -105,8 +109,9 @@
 <p>本拡張機能は、ユーザーの閲覧履歴・閲覧内容・検索語を<strong>外部サーバーに送信または保存しません。</strong>開発者は、ユーザーがどのサイトを登録したか、どのサイトを訪問したかを知ることができません。すべての処理はユーザーのブラウザ内でのみ行われます。</p>
 
 <h2>2. 保存する情報と保存場所</h2>
-<p>本拡張機能は、ユーザーが登録したサイト・掲示板のリスト（ドメインおよびURLパターン）とオン/オフ設定のみを保存します。この情報はChromeの<code>storage.sync</code>領域に保存され、ユーザー自身のGoogleアカウントに紐づき、同じアカウントでサインインした他の端末と同期されます。この保存領域に開発者はアクセスできず、Googleがアカウント単位で管理します。</p>
+<p>本拡張機能は、ユーザーが登録したサイト・掲示板のリスト（ドメインおよびURLパターン）、オン/オフ設定、およびレビュー案内を再表示しないという選択を保存します。この情報はChromeの<code>storage.sync</code>領域に保存され、ユーザー自身のGoogleアカウントに紐づき、同じアカウントでサインインした他の端末と同期されます。この保存領域に開発者はアクセスできず、Googleがアカウント単位で管理します。</p>
 <p>このほか、レビュー依頼を表示するタイミングを判断するための累計削除件数とインストール日時が、ユーザーの端末内（<code>storage.local</code>）にのみ保存されます。これらはURLを含まない数値であり、端末の外に送信されることはありません。</p>
+<p>また、過去の履歴をさかのぼって削除する間、その進捗をポップアップに表示するために、削除中のドメイン名と進捗件数が<code>storage.session</code>領域に一時的に保存されます。この値は削除の完了時に消去され、ブラウザを終了すると失われ、端末の外に送信されることはありません。</p>
 
 <h2>3. 各権限を使用する理由</h2>
 <ul>
@@ -118,10 +123,11 @@
 </ul>
 
 <h2>4. 決済処理</h2>
-<p>本拡張機能の有料機能の決済は、第三者サービスであるExtensionPay（extensionpay.com）を通じて処理されます。決済時には、決済状況を確認するための通信がExtensionPayとの間で行われます。カード番号などの実際の決済手段情報は、本拡張機能ではなくExtensionPayおよびその決済処理会社（Stripe）が扱い、開発者はこれにアクセスしません。ExtensionPayのプライバシーポリシーについては、同サービスのウェブサイトをご参照ください。</p>
+<p>現在配布している無料版は決済機能を含んでおらず、決済に関する外部との通信を行いません。</p>
+<p>今後、有料機能が提供される場合、決済は第三者サービスであるExtensionPay（extensionpay.com）を通じて処理され、決済状況を確認するための通信がExtensionPayとの間で行われます。その場合でも、カード番号などの実際の決済手段情報は、本拡張機能ではなくExtensionPayおよびその決済処理会社（Stripe）が扱い、開発者はこれにアクセスしません。ExtensionPayのプライバシーポリシーについては、同サービスのウェブサイトをご参照ください。</p>
 
 <h2>5. 第三者への提供</h2>
-<p>本拡張機能は、第4項の決済処理を除き、ユーザーのいかなる情報も第三者に販売・提供・共有しません。</p>
+<p>本拡張機能は、第4項に記載の決済処理（提供される場合に限る）を除き、ユーザーのいかなる情報も第三者に販売・提供・共有しません。</p>
 
 <h2>6. お問い合わせ</h2>
 <p>本ポリシーに関するお問い合わせは、次のメールアドレスまでご連絡ください: <code>wjdrudgml17@gmail.com</code></p>
