@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NoTrace Privacy Policy / 개인정보 처리방침 / プライバシーポリシー</title>
+<meta name="description" content="NoTrace Chrome extension privacy policy — Korean / English / Japanese." />
+<style>
+  body { max-width: 720px; margin: 40px auto; padding: 0 20px; font: 15px/1.7 system-ui, "Malgun Gothic", sans-serif; color: #1c1f24; }
+  h1 { font-size: 22px; } h2 { font-size: 17px; margin-top: 32px; }
+  hr { margin: 48px 0; border: none; border-top: 1px solid #e5e7eb; }
+  .lang-note { color: #6b7280; font-size: 13px; }
+  code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  nav { margin: 24px 0 8px; font-size: 13px; }
+  nav a { color: #2563eb; text-decoration: none; margin-right: 12px; }
+  nav a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#ko">한국어</a>
+  <a href="#en">English</a>
+  <a href="#ja">日本語</a>
+</nav>
+
+<!-- ============ 한국어 ============ -->
+<section id="ko" lang="ko">
+<h1>NoTrace 개인정보 처리방침</h1>
+<p class="lang-note">최종 수정일: 2026-09-18</p>
+
+<p>NoTrace(이하 "본 확장 프로그램")는 사용자가 지정한 사이트의 방문 기록을 삭제하여 주소창 자동완성에 표시되지 않도록 하는 크롬 확장 프로그램입니다. 본 확장 프로그램은 사용자의 개인정보를 중요하게 여기며, 수집·처리하는 정보를 아래와 같이 투명하게 공개합니다.</p>
+
+<h2>1. 수집하지 않는 정보</h2>
+<p>본 확장 프로그램은 사용자의 방문 기록, 열람 내용, 검색어를 <strong>외부 서버로 전송하거나 저장하지 않습니다.</strong> 개발자는 사용자가 어떤 사이트를 등록했는지, 어떤 사이트를 방문하는지 알 수 없습니다. 모든 처리는 사용자의 브라우저 안에서만 이루어집니다.</p>
+
+<h2>2. 저장하는 정보와 저장 위치</h2>
+<p>본 확장 프로그램은 사용자가 등록한 사이트·게시판 목록(도메인 및 URL 패턴)과 켜기/끄기 설정만을 저장합니다. 이 정보는 크롬의 <code>storage.sync</code> 영역에 저장되며, 이는 사용자 본인의 구글 계정에 연결되어 같은 계정의 다른 기기와 동기화됩니다. 이 저장소는 개발자가 접근할 수 없으며, 구글이 사용자 계정 단위로 관리합니다.</p>
+<p>이 외에, 리뷰 요청을 표시할 시점을 판단하기 위한 누적 삭제 건수와 설치 시각이 사용자의 기기 내부(<code>storage.local</code>)에만 저장됩니다. 이 값은 어떤 URL도 포함하지 않는 숫자이며, 기기 밖으로 전송되지 않습니다.</p>
+
+<h2>3. 권한을 사용하는 이유</h2>
+<ul>
+  <li><code>history</code>: 등록된 사이트의 방문 기록을 찾아 삭제하기 위해 사용합니다. 기록을 읽어 외부로 보내지 않으며, 오직 삭제 목적으로만 접근합니다.</li>
+  <li><code>bookmarks</code>: 사용자가 등록한 사이트가 북마크에 있는 경우, 북마크는 방문 기록 삭제로 숨겨지지 않으므로 이를 사용자에게 알리기 위해 읽기 전용으로 사용합니다. 북마크를 수정·삭제·전송하지 않습니다.</li>
+  <li><code>storage</code>: 등록한 도메인 목록과 설정을 저장하기 위해 사용합니다.</li>
+  <li><code>activeTab</code>: 팝업에서 "현재 사이트 등록" 버튼을 제공하기 위해, 현재 열려 있는 탭의 주소만 확인합니다.</li>
+  <li><code>tabs</code>: 등록한 사이트의 탭이 열려 있는 동안은 방문 기록을 삭제해도 브라우저의 "탭 전환" 자동완성 후보로 계속 표시됩니다. 이를 해결하기 위해, 등록 사이트의 열린 탭을 감지해 사용자에게 알리고 사용자가 한 번에 닫을 수 있게 하며, 사용자가 등록 사이트의 일반 탭을 모두 닫은 뒤 백그라운드에 남은 팝업형 창을 정리하는 데 사용합니다. 탭 주소는 등록 목록과의 일치 판정에만 사용되며 저장·전송되지 않습니다.</li>
+</ul>
+
+<h2>4. 결제 처리</h2>
+<p>본 확장 프로그램의 유료 기능 결제는 제3자 서비스인 ExtensionPay(extensionpay.com)를 통해 처리됩니다. 결제 진행 시 결제 상태 확인을 위한 통신이 ExtensionPay와 이루어집니다. 실제 카드 정보 등 결제 수단 정보는 본 확장 프로그램이 아니라 ExtensionPay 및 그 결제 처리사(Stripe)가 처리하며, 개발자는 이에 접근하지 않습니다. ExtensionPay의 개인정보 처리방침은 해당 서비스의 웹사이트를 참고하시기 바랍니다.</p>
+
+<h2>5. 정보의 제3자 제공</h2>
+<p>본 확장 프로그램은 4항의 결제 처리를 제외하고 사용자의 어떠한 정보도 제3자에게 판매·제공·공유하지 않습니다.</p>
+
+<h2>6. 문의</h2>
+<p>본 방침에 대한 문의는 다음 이메일로 연락 주시기 바랍니다: <code>wjdrudgml17@gmail.com</code></p>
+</section>
+
+<hr />
+
+<!-- ============ English ============ -->
+<section id="en" lang="en">
+<h1>NoTrace Privacy Policy</h1>
+<p class="lang-note">Last updated: 2026-09-18</p>
+
+<p>NoTrace (the "Extension") is a Chrome extension that deletes the browsing history of sites you designate, so they do not appear in address bar autocomplete. We take your privacy seriously and disclose the information we handle transparently below.</p>
+
+<h2>1. Information we do not collect</h2>
+<p>The Extension <strong>does not transmit or store</strong> your browsing history, page contents, or search queries on any external server. The developer cannot know which sites you register or which sites you visit. All processing happens entirely within your own browser.</p>
+
+<h2>2. Information we store and where</h2>
+<p>The Extension stores only your list of registered sites and boards (domains and URL patterns) and your on/off setting. This is kept in Chrome's <code>storage.sync</code> area, which is tied to your own Google account and syncs across your devices signed in to that account. The developer cannot access this storage; it is managed by Google on a per-account basis.</p>
+<p>Additionally, a cumulative deletion count and the installation time are stored only on your device (<code>storage.local</code>) to decide when to show a review request. These are plain numbers containing no URLs, and never leave your device.</p>
+
+<h2>3. Why we use each permission</h2>
+<ul>
+  <li><code>history</code>: To find and delete the browsing history of registered sites. History is never read for transmission — access is solely for deletion.</li>
+  <li><code>bookmarks</code>: Read-only, to warn you when a registered site is also bookmarked (bookmarks are not hidden by history deletion). We never modify, delete, or transmit bookmarks.</li>
+  <li><code>storage</code>: To save your registered domain list and settings.</li>
+  <li><code>activeTab</code>: To offer a "register current site" button in the popup, we read only the address of the currently open tab.</li>
+  <li><code>tabs</code>: While a tab from a registered site remains open, the browser keeps showing it in the "switch to tab" autocomplete suggestions even after its history is deleted. To address this, we use this permission to detect open tabs of registered sites, warn you, and let you close them in one click, and to clean up leftover popup-type windows of a registered site after you close its last normal tab. Tab addresses are used only for matching against your registered list and are never stored or transmitted.</li>
+</ul>
+
+<h2>4. Payment processing</h2>
+<p>Payment for the Extension's paid features is handled by a third-party service, ExtensionPay (extensionpay.com). During payment, communication with ExtensionPay occurs to verify payment status. Actual payment method details (such as card numbers) are handled by ExtensionPay and its payment processor (Stripe), not by the Extension, and the developer does not access them. Please refer to ExtensionPay's own privacy policy on their website.</p>
+
+<h2>5. Sharing with third parties</h2>
+<p>Except for the payment processing described in section 4, the Extension does not sell, provide, or share any of your information with third parties.</p>
+
+<h2>6. Contact</h2>
+<p>For questions about this policy, please contact: <code>wjdrudgml17@gmail.com</code></p>
+</section>
+
+<hr />
+
+<!-- ============ 日本語 ============ -->
+<section id="ja" lang="ja">
+<h1>NoTrace プライバシーポリシー</h1>
+<p class="lang-note">最終更新日: 2026-09-18</p>
+
+<p>NoTrace（以下「本拡張機能」）は、ユーザーが指定したサイトの閲覧履歴を削除し、アドレスバーの自動補完に表示されないようにするChrome拡張機能です。本拡張機能はユーザーのプライバシーを重視し、扱う情報を以下のとおり透明に開示します。</p>
+
+<h2>1. 収集しない情報</h2>
+<p>本拡張機能は、ユーザーの閲覧履歴・閲覧内容・検索語を<strong>外部サーバーに送信または保存しません。</strong>開発者は、ユーザーがどのサイトを登録したか、どのサイトを訪問したかを知ることができません。すべての処理はユーザーのブラウザ内でのみ行われます。</p>
+
+<h2>2. 保存する情報と保存場所</h2>
+<p>本拡張機能は、ユーザーが登録したサイト・掲示板のリスト（ドメインおよびURLパターン）とオン/オフ設定のみを保存します。この情報はChromeの<code>storage.sync</code>領域に保存され、ユーザー自身のGoogleアカウントに紐づき、同じアカウントでサインインした他の端末と同期されます。この保存領域に開発者はアクセスできず、Googleがアカウント単位で管理します。</p>
+<p>このほか、レビュー依頼を表示するタイミングを判断するための累計削除件数とインストール日時が、ユーザーの端末内（<code>storage.local</code>）にのみ保存されます。これらはURLを含まない数値であり、端末の外に送信されることはありません。</p>
+
+<h2>3. 各権限を使用する理由</h2>
+<ul>
+  <li><code>history</code>: 登録されたサイトの閲覧履歴を検索して削除するために使用します。履歴を読み取って外部に送信することはなく、削除のみを目的としてアクセスします。</li>
+  <li><code>bookmarks</code>: 登録されたサイトがブックマークにある場合、ブックマークは履歴削除では非表示にならないため、それをユーザーに通知する目的で読み取り専用で使用します。ブックマークの変更・削除・送信は行いません。</li>
+  <li><code>storage</code>: 登録したドメインのリストと設定を保存するために使用します。</li>
+  <li><code>activeTab</code>: ポップアップで「現在のサイトを登録」ボタンを提供するため、現在開いているタブのアドレスのみを確認します。</li>
+  <li><code>tabs</code>: 登録したサイトのタブが開いている間は、履歴を削除してもブラウザの「タブに切り替える」自動補完候補に表示され続けます。これに対応するため、登録サイトの開いているタブを検知してユーザーに通知し、ワンクリックで閉じられるようにするほか、登録サイトの通常タブをすべて閉じた後にバックグラウンドへ残ったポップアップ型ウィンドウを整理するために使用します。タブのアドレスは登録リストとの一致判定にのみ使用され、保存・送信されることはありません。</li>
+</ul>
+
+<h2>4. 決済処理</h2>
+<p>本拡張機能の有料機能の決済は、第三者サービスであるExtensionPay（extensionpay.com）を通じて処理されます。決済時には、決済状況を確認するための通信がExtensionPayとの間で行われます。カード番号などの実際の決済手段情報は、本拡張機能ではなくExtensionPayおよびその決済処理会社（Stripe）が扱い、開発者はこれにアクセスしません。ExtensionPayのプライバシーポリシーについては、同サービスのウェブサイトをご参照ください。</p>
+
+<h2>5. 第三者への提供</h2>
+<p>本拡張機能は、第4項の決済処理を除き、ユーザーのいかなる情報も第三者に販売・提供・共有しません。</p>
+
+<h2>6. お問い合わせ</h2>
+<p>本ポリシーに関するお問い合わせは、次のメールアドレスまでご連絡ください: <code>wjdrudgml17@gmail.com</code></p>
+</section>
+
+</body>
+</html>
